@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = AlgoApplication.class)
 @WebAppConfiguration
-public class AlgoApplicationTests  extends BaseIntegrationTest{
+public class AlgoApplicationTests {
 	
 	 private MockMvc mockMvc;
 	 
