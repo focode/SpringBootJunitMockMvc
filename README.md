@@ -16,5 +16,13 @@ Maximum satisfaction that can be attained by Mr. Gorden in 100 is :168349
 
 Please enter time in incremental order only.
 
+This solution is derived from Abstract programming 
+
+TDD approach has been followed, initially a test case was written for the rest api and it ws failed then application was made and finally 
+
+test case passed
+
+Test case class name is : AlgoApplicationTests and MockMvc was the framework that was used for TDD.
+
 
 
