@@ -33,25 +33,5 @@ public class KnapsackUtility
         return K[n][W];
     }
  
-   /* public static void main(String args[])
-    {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of items: ");
-        int n = sc.nextInt();
-        System.out.println("Enter the items weights: ");
-        int []wt = new int[n];
-        for(int i=0; i<n; i++)
-            wt[i] = sc.nextInt();
- 
-        System.out.println("Enter the items values: ");
-        int []val = new int[n];
-        for(int i=0; i<n; i++)
-            val[i] = sc.nextInt();
- 
-        System.out.println("Enter the maximum capacity: ");
-        int W = sc.nextInt();
- 
-        System.out.println("The maximum value that can be put in a knapsack of capacity W is: " + knapSack(W, wt, val, n));
-        sc.close();
-    }*/
+   
 }
