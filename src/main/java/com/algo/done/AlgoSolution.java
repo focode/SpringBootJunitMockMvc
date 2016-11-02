@@ -22,19 +22,26 @@ import com.google.common.primitives.Ints;
 import com.algo.done.utility.*;
 
 @Component
-public class UltimateSolution {
+public class AlgoSolution {
 	
 	
 	@Value(value = "classpath:data.txt")
 	private Resource dataFile;
 	
 	@Autowired
-	SumSet sumSet;
-	
+	SumSetUtility sumSet;
+	    /**
+	     * 
+	     * @param targetTime
+	     * @return
+	     * @throws FileNotFoundException
+	     * @throws IOException
+	     */
 		public int getSatisfaction(int targetTime) throws FileNotFoundException, IOException{
 
 			List<MealsSatisfaction> timeAndSatisfaction = new ArrayList<MealsSatisfaction>();
 			List<Integer> times = new ArrayList<Integer>();
+			// reading data.txt from resource folder and storing it in list
 			try (BufferedReader br = new BufferedReader(new FileReader(dataFile.getFile()))) {
 			    String line;
 			    while ((line = br.readLine()) != null) {
@@ -48,7 +55,7 @@ public class UltimateSolution {
 			}
 			
 			
-			
+			// Organizing the output
 			Integer[] numbers = Arrays.stream( Ints.toArray(times) ).boxed().toArray( Integer[]::new );
 			List <TempDataForPartial> tempDataForPartial= sumSet.sum_up_recursive(new ArrayList<Integer>(Arrays.asList(numbers)),targetTime,new ArrayList<Integer>());
 			int count = -1;
@@ -70,17 +77,27 @@ public class UltimateSolution {
 			
 			Arrays.sort(sat);
 			
-			
+			tempDataForPartial = null;
+			satisfaction = 0;
 			if(sat.length>0){
+			// after sorting last number is the maximum satisfaction	
 			System.out.println("Maximum satisfaction:"+sat[sat.length-1]);
-			return sat[sat.length-1];
+			int satVal = sat[sat.length-1];
+			 sat = null;
+			return satVal;
 			}else{
+				// their might not be any satisfaction
 				System.out.println("Sorry wrong input");
 				return 0;
 			}
 			
 		}
-		
+		/**
+		 * 
+		 * @param mealsSatisfaction
+		 * @param tempTimes
+		 * @return
+		 */
 		private static int matchFound(MealsSatisfaction mealsSatisfaction, List<Integer> tempTimes) {
 			int satisfaction = 0;
 			for (Integer integer : tempTimes) {

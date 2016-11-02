@@ -3,7 +3,11 @@ package com.algo.done.dto;
 public class MealsSatisfaction {
 
 
-	
+	/**
+	 * 
+	 * @param time
+	 * @param statisfaction
+	 */
 	public MealsSatisfaction(Integer time,Integer statisfaction) {
 		this.time =  time;
 		this.statisfaction = statisfaction;

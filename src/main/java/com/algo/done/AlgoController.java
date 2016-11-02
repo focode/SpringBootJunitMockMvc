@@ -13,15 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 public class AlgoController {
 	
 	@Autowired
-	UltimateSolution ultimateSolution;
+	AlgoSolution algoSolution;
 	
+	/**
+	 * @param time
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/{time}", method = RequestMethod.GET)
 	String readTime(@PathVariable Integer time) throws FileNotFoundException, IOException {
 		
 		System.out.println("the input time is ::"+time);
-		return "Maximum satisfaction that can be attained by Mr. Gorden in "+time+" is :"+ultimateSolution.getSatisfaction(time);
+		return "Maximum satisfaction that can be attained by Mr. Gorden in "+time+" is :"+algoSolution.getSatisfaction(time);
 	}
 	
+	/**
+	 * 
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	String readRoot() throws FileNotFoundException, IOException {
 		return "ok";
