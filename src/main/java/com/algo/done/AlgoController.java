@@ -52,12 +52,10 @@ public class AlgoController {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	@RequestMapping(value = "/{timeVal}", method = RequestMethod.GET)
-	String readRoot(@PathVariable Integer timeVal) throws FileNotFoundException, IOException {
+	@RequestMapping(value = "/gorden", method = RequestMethod.GET)
+	String readRoot() throws FileNotFoundException, IOException {
 		List<Integer> satisfaction = new ArrayList<Integer>();
 		List<Integer> times = new ArrayList<Integer>();
-		
-		
 		// reading data.txt from resource folder and storing it in list
 		try (BufferedReader br = new BufferedReader(new FileReader(dataFile.getFile()))) {
 		 String line;
@@ -73,26 +71,19 @@ public class AlgoController {
 		    //10000 100
 		
 	        int n = 100; 
-	        int []wt = new int[satisfaction.size()];
-	        for (int i=0;i<=satisfaction.size()-1;i++) {
-	        	wt[i] = satisfaction.get(i);
+	        int []wt = new int[times.size()];
+	        for (int i=0;i<=times.size()-1;i++) {
+	        	wt[i] = times.get(i);
 			}
-	 
-	       
-	        int []val = new int[times.size()];
-	        for(int i = 0;i<=times.size()-1;i++){
-	        	val[i] = times.get(i);
+		       
+	        int []val = new int[satisfaction.size()];
+	        for(int i = 0;i<=satisfaction.size()-1;i++){
+	        	val[i] = satisfaction.get(i);
 	        }
 	 
 	       
-	        int W = timeVal;// maximum capicity
-	 
-	        System.out.println("The maximum value that can be put in a knapsack of capacity W is: " + kanpsackUtility.knapSack(W, wt, val, n));
-	       
-		
-		
-		
-		return "Maximum satisfaction that can be attained by Mr. Gorden in "+timeVal+" is :"+kanpsackUtility.knapSack(W, wt, val, n);
+	        int W = 10000;// maximum 
+	 		return "Maximum satisfaction that can be attained by Mr. Gorden is :"+kanpsackUtility.knapSack(W, wt, val, n);
 	}
 	
 	

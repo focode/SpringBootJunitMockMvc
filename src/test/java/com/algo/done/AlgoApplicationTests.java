@@ -36,8 +36,8 @@ public class AlgoApplicationTests {
 		
 		@Test
 		public void getItemsShouldReturnBothItems() throws Exception {
-			this.mockMvc.perform(get("/1000"))				
-					.andExpect(content().string("Maximum satisfaction that can be attained by Mr. Gorden in 1000 is :558"));
+			this.mockMvc.perform(get("/gorden"))				
+					.andExpect(content().string("Maximum satisfaction that can be attained by Mr. Gorden is :2493893"));
 		}
 		
 		/**
@@ -47,7 +47,7 @@ public class AlgoApplicationTests {
 		@Test
 		public void getNegativeTestCases() throws Exception {
 			this.mockMvc.perform(get("/abc"))				
-					.andExpect(status().isBadRequest());
+					.andExpect(status().is(404));
 		}
 
 }
