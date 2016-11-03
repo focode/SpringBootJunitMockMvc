@@ -4,25 +4,33 @@ Gordon Ramsey, a very smart guy, likes eating food. Now, Gordon is at a restaura
 
 To build this application command is : mvn clean install
 
+This will also run the test cases automatically from AlgoApplicationTests.java
+
+negative test case has also been implemented 
+
+testing framework is MockMvc
+
 To run this application command is : spring-boot:run
 
-After running the application open http://localhost:8080/100
+After running the application open http://localhost:8080/gorden
 
-here 100 is time input
+
 
 and you will be able to see the maximum satisfaction like this:
 
-Maximum satisfaction that can be attained by Mr. Gorden in 100 is :168349
+Maximum satisfaction that can be attained by Mr. Gorden is :2493893
 
-Please enter time in incremental order only.
 
-This solution is derived from Abstract programming 
 
-TDD approach has been followed, initially a test case was written for the rest api and it ws failed then application was made and finally 
+This solution is derived from knapsack algorithm 
+
+TDD approach has been followed, initially a test case was written for the rest api and it was failed then application was made and finally 
 
 test case passed
 
 Test case class name is : AlgoApplicationTests and MockMvc was the framework that was used for TDD.
+
+
 
 
 
